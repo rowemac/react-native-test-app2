@@ -54,10 +54,12 @@ const styles = StyleSheet.create({
 
     resultContainer: {
         marginHorizontal: 20, 
+        marginVertical: 15
     },
 
     resultText: {
-        textAlign: 'center'
+        textAlign: 'center', 
+        fontSize: 20
     }, 
 
     highlight: {
