@@ -1,5 +1,5 @@
 import React, { useState, useRef, useEffect } from "react";
-import { View, Text, StyleSheet, Button, Alert, ScrollView, FlatList } from 'react-native';
+import { View, Text, StyleSheet, Button, Alert, ScrollView, FlatList, Dimensions } from 'react-native';
 import { Ionicons } from '@expo/vector-icons'
 
 import NumberContainer from "../components/NumberContainer";
@@ -92,14 +92,16 @@ const styles = StyleSheet.create({
     buttonContainer: {
         flexDirection: 'row', 
         justifyContent: 'space-around', 
-        marginTop: 20,
+        // marginTop: 20,
+        marginTop: Dimensions.get('window').height > 600 ? 20 : 5, // Using if conditions and ternary -- can also use in regular component
         width: 400,
         maxWidth: '90%' 
     },
 
     listContainer: {
         flex: 1,
-        width: '80%'
+        width: Dimensions.get('window').width > 350 ? '60%' : '80%'
+
     },
 
     list: {
@@ -115,7 +117,8 @@ const styles = StyleSheet.create({
         marginVertical: 10, 
         backgroundColor: 'white',
         flexDirection: 'row',
-        justifyContent: 'space-between'
+        justifyContent: 'space-between',
+        width: '100%'
     }
 });
 
